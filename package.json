@@ -1,0 +1,30 @@
+{
+    "name": "blogging",
+    "version": "1.0.0",
+    "description": "it's mini face book.user blog and their comment.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "rishabh chandel",
+    "license": "ISC",
+    "dependencies": {
+        "base-64": "^0.1.0",
+        "bcrypt-nodejs": "0.0.3",
+        "body-parser": "^1.17.2",
+        "bunyan": "^1.8.12",
+        "express": "^4.15.3",
+        "jsonwebtoken": "^7.4.2",
+        "mongoose": "^4.11.5",
+        "node-mailer": "^0.1.1",
+        "redis": "^2.7.1",
+        "request": "^2.81.0",
+        "uuid": "^3.1.0"
+    },
+    "devDependencies": {},
+    "keywords": [
+        "user"
+        "blog",
+        "facebook"
+    ]
+}
