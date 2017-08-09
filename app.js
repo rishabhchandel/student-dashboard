@@ -10,6 +10,11 @@ securedRoter = express.Router();
 require('./controller/blog.js').route(pubRouter, securedRoter);
 require('./controller/user.js').route(pubRouter, securedRoter);
 
+app.use(function(req, res, next){
+    console.log(req.url);
+   next();
+});
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
