@@ -39,8 +39,10 @@ async function signUp(req, res) {
         console.log('qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq', req.body);
 
         await new User(req.body).save()
-        res.send('Succesfully signup');
+    //    res.send('Succesfully signup');
+    //res.sendFile('sign.html');
+        res.sendFile('blog.js');
     } catch (e) {
-        console.log(e.message);
+        console.log("qqqqqqqqqqqqq",e.message);
     } finally {}
 }
