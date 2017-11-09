@@ -1,8 +1,8 @@
 {
-  "name": "blogging",
+  "name": "dashboard",
   "version": "1.0.0",
-  "description": "it's mini face book.user blog and their comment.",
-  "main": "index.js",
+  "description": "it's student dashboard.",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,8 +24,7 @@
   },
   "devDependencies": {},
   "keywords": [
-    "user",
-    "blog",
-    "facebook"
+    "student",
+    "dashboard"
   ]
 }

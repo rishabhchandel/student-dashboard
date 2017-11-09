@@ -1,0 +1,21 @@
+{
+  "name": "pjanus-sample-angularjs-crud",
+  "version": "0.1.1",
+  "description": "Sample Angular JS Application - List, Add, Edit and Delete Users",
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-sanitize": "1.2.x",
+    "angular-mocks": "1.2.x",
+    "bootstrap": "~3.2",
+    "angular-bootstrap": "~0.11.0",
+    "angular-ui-router": "~0.2",
+    "angular-resource": "~1.2.21"
+  },
+  "resolutions": {
+    "select2": "3.5.2",
+    "angular": "1.2.x"
+  },
+  "devDependencies": {
+    "angular-xeditable": "~0.1.9"
+  }
+}

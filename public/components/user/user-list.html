@@ -1,0 +1,95 @@
+<div>
+<div>
+
+</div>
+
+  <form class="form-inline">
+      <div class="form-group">
+          <label >Search</label>
+          <input type="text" ng-model="search" class="form-control" placeholder="Search">
+      </div>
+  </form>
+
+    <table class="table table-bordered table-hover">
+
+      <thead>
+              <tr>
+                  <th ng-click="sort('id')">Id</th>
+                  <th ng-click="sort('name')">FName</th>
+                  <th ng-click="sort('age')">age</th>
+                  <th ng-click="sort('school')">school</th>
+                  <th ng-click="sort('class')">class</th>
+                  <th ng-click="sort('division')">division</th>
+              </tr>
+          </thead>
+
+
+        <tr dir-paginate="user in users|itemsPerPage:5|orderBy:sortKey:reverse|filter:search">
+          <td>
+              <!-- editable username (text with validation) -->
+              <span e-name="id" e-form="rowform" >
+        {{ user.id || 'empty' }}
+      </span>
+          </td>
+            <td>
+                <!-- editable username (text with validation) -->
+                <span editable-text="user.name" e-name="name" e-form="rowform" onbeforesave="checkName($data, user.id)" e-required>
+          {{ user.name || 'empty' }}
+        </span>
+            </td>
+            <td>
+                <!-- editable status (select-local) -->
+                <span editable-date="user.dob" e-name="dob" e-form="rowform">
+          {{ showAge(user.dob) }}
+        </span>
+            </td>
+            <td>
+                <!-- editable group (select-remote) -->
+                <span editable-text="user.school" e-name="school" e-form="rowform" >
+          {{ user.school }}
+        </span>
+      </span>
+          </td>
+          <td>
+              <!-- editable group (select-remote) -->
+              <span editable-text="user.class" e-name="class" e-form="rowform" >
+        {{ user.class }}
+      </span>
+    </span>
+        </td>
+        <td>
+            <!-- editable group (select-remote) -->
+            <span editable-text="user.division" e-name="division" e-form="rowform" >
+      {{ user.division }}
+    </span>
+            </td>
+            <td style="white-space: nowrap">
+                <!-- form -->
+                <form editable-form name="rowform" onbeforesave="updateUser($data,user.id, user._id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
+                    <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                        save
+                    </button>
+                    <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+                        cancel
+                    </button>
+                </form>
+                <div class="buttons" ng-show="!rowform.$visible">
+                    <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+                    <button class="btn btn-danger" ng-click="removeUser($index)">del</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div>
+      <dir-pagination-controls
+         max-size="10"
+         direction-links="true"
+         boundary-links="true" >
+      </dir-pagination-controls>
+
+    </div>
+    <button class="btn btn-default" ng-click="addUser()">Add row</button>
+
+
+</div>
